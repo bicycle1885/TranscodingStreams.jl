@@ -118,6 +118,7 @@ function TranscodingStream(codec::Codec, stream::IO;
     checkbufsize(bufsize)
     checksharedbuf(sharedbuf, stream)
     if sharedbuf
+        stream::TranscodingStream
         state = State(Buffer(bufsize), stream.state.buffer1)
     else
         state = State(bufsize)
